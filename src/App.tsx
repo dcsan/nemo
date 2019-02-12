@@ -77,7 +77,6 @@ export default class App extends Component {
     return (
       <ThemeProvider theme={theme}>
         <Container>
-          <div>adfasdfsdf</div>
           {this.state.hasEnded && <RefreshButton />}
           <StyledChatBot
             { ... this.props}
