@@ -4,6 +4,7 @@ import Reward from "react-rewards";
 import LocalizedStrings from "react-localization";
 import { FishSelector } from "./components/FishSelector";
 import { LandingDataTable } from "./components/LandingDataCard";
+import { CatchDataTable } from "./components/CatchDataCard";
 
 // import { IDialogue } from "./react-app-env";
 
@@ -83,6 +84,9 @@ export const strings: any = new LocalizedStrings({
     landing: "Landing ⚓",
     sale: "Sale 💰",
     nothing: "I'm good 😁",
+    prev_logs: "View Previous Logs 💰",
+    quantity: "Quantity",
+    preservation_method: "Preservation Method",
 
     prompt_nothing: "Smooth sailing 💨",
 
@@ -274,7 +278,20 @@ export const createSteps = () => [
     hideInput: true,
     message: () => strings.prompt_end,
     end: true
+  },
+  {
+    id: "prev_logs",
+    hideInput: true,
+    component: (
+        <div>
+          <CatchDataTable/>
+          <CatchDataTable/>
+          <CatchDataTable/>
+          <CatchDataTable/>
+        </div>
+    )
   }
+
 ];
 
 const createOptionLabel = (value: string) => ({
